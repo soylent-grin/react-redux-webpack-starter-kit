@@ -1,0 +1,51 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "airbnb",
+    "globals": {
+
+    },
+    "rules": {
+        "prefer-template": [ "warn" ],
+        "camelcase": [ "warn" ],
+
+        "no-console": [ "off" ],
+        "new-cap": [ "off" ],
+        "max-len": [ "off" ],
+        "no-underscore-dangle": [ "off" ],
+        "import/no-unresolved": [ "off" ],
+        "arrow-body-style": [ "off" ],
+        "no-nested-ternary": [ "off" ],
+        "func-names": [ "off" ],
+        "radix": [ "off" ],
+        "eqeqeq": [ "off" ],
+        "no-restricted-syntax": [ "off" ],
+        "space-before-function-paren": [ "off" ],
+        "no-useless-constructor": [ "off" ],
+        "no-param-reassign": [ "off" ],
+        "guard-for-in": [ "off" ],
+        "wrap-iife": [ "off" ],
+        "no-new": [ "off" ],
+        "quotes": [ "off"],
+
+        "react/prefer-es6-class": [ "warn" ],
+        "react/jsx-no-bind": [ "warn" ],
+        "react/prefer-stateless-function": [ "warn" ],
+
+        "react/prop-types": [ "off" ],
+        "react/jsx-first-prop-new-line": [ "off" ],
+        "react/jsx-indent-props": [ "off" ],
+        "react/sort-comp": [ "off" ],
+        "react/no-multi-comp": [ "off" ],
+        "react/no-deprecated": [ "off" ],
+
+        "linebreak-style": [ "error", "unix" ],
+        "comma-dangle": [ "error", "never"],
+        "indent": ["error", 4],
+        "react/jsx-indent": ["error", 4],
+        "semi": ["error", "always"]
+    }
+}

@@ -107,11 +107,7 @@ var WEBPACK_CONFIG = {
         extensions: ['', '.js'],
         alias: {
             dry: path.join(__dirname, BUILD_CONFIG.srcDir, 'dry'),
-            common: path.join(__dirname, BUILD_CONFIG.srcDir, 'common'),
-            leaflet_css: __dirname + "/node_modules/leaflet/dist/leaflet.css",
-            leaflet_marker: __dirname + "/node_modules/leaflet/dist/images/marker-icon.png",
-            leaflet_marker_2x: __dirname + "/node_modules/leaflet/dist/images/marker-icon-2x.png",
-            leaflet_marker_shadow: __dirname + "/node_modules/leaflet/dist/images/marker-shadow.png"
+            common: path.join(__dirname, BUILD_CONFIG.srcDir, 'common')
         }
     },
 
@@ -126,18 +122,8 @@ var WEBPACK_CONFIG = {
             {
                 from: 'dry',
                 to: 'dry'
-            },
-            {
-                from: 'common/img',
-                to: 'common/img'
             }
-        ], {
-            ignore: [
-                'js/components/**/*',
-                'js/stores/**/*',
-                '**/*.less'
-            ]
-        }),
+        ]),
 
         // using to build-time variable declaration
         new webpack.DefinePlugin({

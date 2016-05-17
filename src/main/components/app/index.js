@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import styles from "./styles.less";
+require("./styles.less");
 
 import log from 'loglevel';
 
@@ -19,8 +19,8 @@ class App extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    const { main } = state;
+function mapStateToProps(/* state */) {
+    // const { main } = state;
     return {
 
     };

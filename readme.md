@@ -1,8 +1,8 @@
 ### Yet Another React Redux Webpack Starter Kit
 
 * [x] Dev and prod modes
-* [ ] Modern ESLint
-* [ ] Modern Babel
+* [x] Modern ESLint
+* [x] Modern Babel
 * [ ] React Storybook
 * [ ] Redux Saga
 
@@ -24,7 +24,6 @@ npm run dev
 #### Bootstrap
 ```
 git clone git@github.com:soylent-grin/react-redux-webpack-starter-kit.git && \
-    cd react-redux-webpack-starter-kit && \
-    npm i && \
-    npm run dev
+    rm -rf react-redux-webpack-starter-kit/.git && \
+    mv react-redux-webpack-starter-kit your_project_name
 ```
