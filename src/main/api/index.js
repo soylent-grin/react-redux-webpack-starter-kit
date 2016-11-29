@@ -1,7 +1,3 @@
-// import URLS from 'common/constants/urls';
+export const load = () => {
 
-export default {
-    load() {
-
-    }
 };

@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-import rootReducer from '../reducers';
+import mainReducer from '../ducks/main';
 
 const logger = createLogger();
 
@@ -10,10 +10,14 @@ const middlewares = [
     logger
 ];
 
+const rootReducer = combineReducers({
+    main: mainReducer
+});
+
 export default function configureStore(initialState) {
     const store = createStore(rootReducer, initialState, compose(
         applyMiddleware(...middlewares),
-        window.devToolsExtension ? window.devToolsExtension() : (f) => f
+        window.devToolsExtension ? window.devToolsExtension() : (f) => { return f; }
     ));
     return store;
 }

@@ -49,7 +49,7 @@ var WEBPACK_CONFIG = {
     entry: {},
 
     // how to process source maps (for production - separate file, does not load when devtool panel is closed)
-    devtool: BUILD_CONFIG.production ? "source-map" : "cheap-module-eval-source-map",
+    devtool: BUILD_CONFIG.production ? "source-map" : "eval",
 
     // turn on watch mode
     watch: !BUILD_CONFIG.production,
@@ -74,7 +74,7 @@ var WEBPACK_CONFIG = {
     module: {
         preLoaders: [
             {
-                test: /\.js$/, loader: 'eslint-loader', exclude: [/node_modules/, /lib/, /dry/]
+                test: /\.js$/, loader: 'eslint-loader', exclude: [/node_modules/, /lib/]
             }
         ],
         loaders: [
@@ -106,7 +106,6 @@ var WEBPACK_CONFIG = {
     resolve: {
         extensions: ['', '.js'],
         alias: {
-            dry: path.join(__dirname, BUILD_CONFIG.srcDir, 'dry'),
             common: path.join(__dirname, BUILD_CONFIG.srcDir, 'common')
         }
     },
@@ -117,18 +116,19 @@ var WEBPACK_CONFIG = {
         // here goes plugins both for dev and production
         new WebpackErrorNotificationPlugin(),
 
-        // just copy all files except .less
-        new CopyWebpackPlugin([
-            {
-                from: 'dry',
-                to: 'dry'
-            }
-        ]),
+        // just copy files
+        // new CopyWebpackPlugin([
+        //     {
+        //         from: 'dir',
+        //         to: 'dir'
+        //     }
+        // ]),
 
         // using to build-time variable declaration
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': `"${BUILD_CONFIG.production ? "production" : "development"}"`
         })
+
     ].concat(
 
         // for each entry point also bundle it's index.jade

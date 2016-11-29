@@ -30,6 +30,8 @@
         "wrap-iife": [ "off" ],
         "no-new": [ "off" ],
         "quotes": [ "off"],
+        "import/no-extraneous-dependencies": [ "off" ],
+        "import/prefer-default-export": [ "off" ],
 
         "react/prefer-es6-class": [ "warn" ],
         "react/jsx-no-bind": [ "warn" ],
@@ -41,6 +43,7 @@
         "react/sort-comp": [ "off" ],
         "react/no-multi-comp": [ "off" ],
         "react/no-deprecated": [ "off" ],
+        "react/jsx-filename-extension": [ "off" ],
 
         "linebreak-style": [ "error", "unix" ],
         "comma-dangle": [ "error", "never"],
